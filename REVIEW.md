@@ -99,8 +99,8 @@ AIを使いながら、自分でプロジェクトを前に進める。高校生
 本人の興味からアプリやWebサービスを制作。企画から検証・改善まで取り組みます。
 AIの答えを確かめ、考え、試す。現役の研究開発者が指導。保護者向け無料相談。
 
-LP：https://review.project-mentoring.pages.dev/
-条件表示：https://review.project-mentoring.pages.dev/#terms
+LP：https://project-mentoring.com/
+条件表示：https://project-mentoring.com/#terms
 
 AI向けレビュー資料：https://github.com/YutoNishimura-v2/project-mentoring-review/blob/main/REVIEW.md
 
