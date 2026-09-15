@@ -159,9 +159,7 @@
 .breadcrumb ol { display:flex; gap:9px; list-style:none; margin:0; padding:0; }
 .breadcrumb li+li::before { content:"/"; margin-right:9px; color:#b0b3af; }
 .page-mobile-menu { display:none; margin-left:auto; }
-.page-mobile-menu summary { min-width:70px; min-height:44px; display:flex; align-items:center; justify-content:flex-end; list-style:none; font-size:0; font-weight:700; cursor:pointer; }
-.page-mobile-menu summary::after { content:"メニュー"; font-size:13px; }
-.page-mobile-menu[open] summary::after { content:"閉じる ×"; }
+.page-mobile-menu summary { min-width:70px; min-height:44px; display:flex; align-items:center; justify-content:flex-end; list-style:none; font-size:13px; font-weight:700; cursor:pointer; }
 .page-mobile-menu summary::-webkit-details-marker { display:none; }
 .page-mobile-menu nav { position:absolute; top:82px; left:0; right:0; display:grid; background:#fff; border-bottom:1px solid var(--hair); padding:14px 24px 24px; }
 .page-mobile-menu nav a { padding:11px 0; border-bottom:1px solid #eee; }

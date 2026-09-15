@@ -9,6 +9,17 @@
   const privacy = document.querySelector('#privacy-dialog');
   const menuButton = document.querySelector('.menu-toggle');
   const menu = document.querySelector('#mobile-nav');
+  document.querySelectorAll('.page-mobile-menu').forEach((details) => {
+    const summary = details.querySelector('summary');
+    if (!summary) return;
+    const updateLabel = () => {
+      const label = details.open ? '閉じる ×' : 'メニュー';
+      summary.textContent = label;
+      summary.setAttribute('aria-label', details.open ? 'メニューを閉じる' : 'メニューを開く');
+    };
+    details.addEventListener('toggle', updateLabel);
+    updateLabel();
+  });
   const sendButton = document.querySelector('#send-consultation');
   const reviewHeading = document.querySelector('#review-title');
   const reviewFields = document.querySelector('#review-fields');
