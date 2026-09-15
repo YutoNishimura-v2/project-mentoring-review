@@ -27,7 +27,23 @@
   <link rel="stylesheet" href="/project-mentoring-review/site-preview/seo.css?v=20260915-2">
   <link rel="stylesheet" href="/project-mentoring-review/site-preview/consent.css?v=20260914-cookie">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PROJECT MENTORING","item":"https://project-mentoring.com/"},{"@type":"ListItem","position":2,"name":"保護者向け無料相談","item":"https://project-mentoring.com/consultation"}]}</script>
-  <script src="/project-mentoring-review/site-preview/config.js"></script>
+  <script>
+/* Review-only public configuration. No production analytics or form delivery. */
+window.MENTORING_CONFIG = Object.freeze({
+  "endpoint": "",
+  "reviewOnly": true,
+  "formUrl": "https://yutonishimura-v2.github.io/project-mentoring-review/site-preview/",
+  "privacyContact": "yutonishimurav20512@gmail.com",
+  "processorDisclosure": "入力内容は、このページのブラウザ保存領域には記録しません。",
+  "analytics": {
+    "enabled": false,
+    "measurementId": "",
+    "hostname": "yutonishimura-v2.github.io",
+    "siteUrl": "https://yutonishimura-v2.github.io/project-mentoring-review/site-preview/",
+    "environment": "review"
+  }
+});
+</script>
   <script>
     if (window.MENTORING_CONFIG && window.MENTORING_CONFIG.analytics) {
       const config = window.MENTORING_CONFIG;
