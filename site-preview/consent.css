@@ -1,0 +1,27 @@
+/* Limited to analytics choices; the v14 page layout stays intact. */
+.analytics-consent[hidden], [data-analytics-settings][hidden] { display: none !important; }
+.analytics-consent { position: fixed; z-index: 70; left: 24px; right: 24px; bottom: 24px; max-width: 1060px; margin: 0 auto; padding: 22px 26px; background: #fff; color: var(--ink); border: 1px solid var(--line); box-shadow: 0 8px 32px #292e2d18; display: flex; align-items: center; gap: 28px; }
+.analytics-consent h2 { font-family: inherit; font-size: 16px; font-weight: 600; line-height: 1.5; letter-spacing: .02em; margin: 0 0 6px; }
+.analytics-consent p { font-size: 14px; line-height: 1.8; margin: 0; color: var(--body); }
+.analytics-consent-copy { flex: 1; }
+.analytics-consent .inline-link { font-size: 14px; margin-top: 5px; }
+.analytics-consent-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.analytics-consent-actions button, .cookie-analytics-only { font: inherit; font-size: 14px; font-weight: 600; min-height: 44px; padding: 10px 20px; background: #fff; border: 1px solid var(--accent); color: var(--accent); cursor: pointer; }
+.analytics-consent-actions button:hover { background: #f4f5f1; }
+.analytics-consent-actions button:focus-visible, .analytics-consent h2:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media(max-width:700px) {
+  .analytics-consent { left: 12px; right: 12px; bottom: 12px; padding: 18px; display: block; max-height: calc(100dvh - 24px); overflow: auto; }
+  .analytics-consent-actions { margin-top: 15px; grid-template-columns: 1fr 1fr; }
+  .analytics-consent-actions button { flex: 1; padding: 10px 12px; }
+}
+
+#analytics-disclosure { font-size: 14px; line-height: 1.9; }
+
+.cookie-controls { flex: 0 0 340px; }
+.cookie-details { margin-top: 8px; }
+.cookie-details summary { cursor: pointer; font-size: 14px; color: var(--accent); min-height: 36px; padding: 8px 0; }
+.cookie-details summary:focus-visible, .cookie-analytics-only:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.cookie-details-body { padding-top: 8px; }
+.cookie-details-body p { font-size: 13px; }
+.cookie-analytics-only { display: block; width: 100%; margin: 12px 0 4px; }
+@media(max-width:700px) { .cookie-controls { width: 100%; } }
