@@ -34,15 +34,15 @@
   window.matchMedia('(min-width:1001px)').addEventListener('change', e => { if (e.matches) closeMenu(); });
 
   const terms = document.querySelector('#terms-dialog');
-  const openTerms = () => { if (!terms.open) terms.showModal(); };
+  const openTerms = () => { if (terms && !terms.open) terms.showModal(); };
   const openLinkedTerms = () => { if (window.location.hash === '#terms') openTerms(); };
-  const openLinkedPrivacy = () => { if (window.location.hash === '#privacy' && !privacy.open) privacy.showModal(); };
+  const openLinkedPrivacy = () => { if (privacy && window.location.hash === '#privacy' && !privacy.open) privacy.showModal(); };
   document.querySelectorAll('[data-terms]').forEach(link => link.addEventListener('click', e => { e.preventDefault(); openTerms(); }));
   window.addEventListener('hashchange', openLinkedTerms);
   window.addEventListener('hashchange', openLinkedPrivacy);
   openLinkedTerms();
   openLinkedPrivacy();
-  document.querySelectorAll('[data-privacy]').forEach(button => button.addEventListener('click', () => privacy.showModal()));
+  document.querySelectorAll('[data-privacy]').forEach(button => button.addEventListener('click', () => privacy?.showModal()));
   document.querySelectorAll('dialog').forEach(dialog => {
     dialog.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => dialog.close()));
     dialog.addEventListener('click', e => {
@@ -121,7 +121,7 @@
 
   sendButton.addEventListener('click', async () => {
     if (reviewOnly) {
-      document.querySelector('#send-status').textContent = 'これはレビュー版です。入力内容は送信されません。';
+      document.querySelector('#send-status').textContent = 'レビュー版のため、入力内容は送信されません。';
       sendButton.textContent = 'レビュー版では送信しません';
       sendButton.disabled = true;
       return;
