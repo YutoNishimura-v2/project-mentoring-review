@@ -30,19 +30,22 @@
   let inFlight = false;
 
   function closeMenu() {
+    if (!menu || !menuButton) return;
     menu.hidden = true;
     menuButton.setAttribute('aria-expanded', 'false');
     menuButton.setAttribute('aria-label', 'メニューを開く');
   }
-  menuButton.addEventListener('click', () => {
-    const open = menuButton.getAttribute('aria-expanded') !== 'true';
-    menu.hidden = !open;
-    menuButton.setAttribute('aria-expanded', String(open));
-    menuButton.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
-  });
-  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-  window.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-  window.matchMedia('(min-width:1001px)').addEventListener('change', e => { if (e.matches) closeMenu(); });
+  if (menu && menuButton) {
+    menuButton.addEventListener('click', () => {
+      const open = menuButton.getAttribute('aria-expanded') !== 'true';
+      menu.hidden = !open;
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    });
+    menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    window.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    window.matchMedia('(min-width:1001px)').addEventListener('change', e => { if (e.matches) closeMenu(); });
+  }
 
   const terms = document.querySelector('#terms-dialog');
   const openTerms = () => { if (terms && !terms.open) terms.showModal(); };
