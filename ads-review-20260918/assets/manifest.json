@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-09-17T18:11:55.609Z",
+  "creativeMix": {
+    "serviceAndProjectExamples": "70%",
+    "mentor": "20%",
+    "brand": "10%",
+    "aiGeneratedPeople": "0%"
+  },
+  "assets": [
+    {
+      "file": "service-roadmap-landscape-1200x628.jpg",
+      "width": 1200,
+      "height": 628,
+      "category": "SERVICE",
+      "caption": "8週間の全体像を4つの大きな段階で伝える",
+      "type": "roadmap"
+    },
+    {
+      "file": "service-roadmap-portrait-960x1200.jpg",
+      "width": 960,
+      "height": 1200,
+      "category": "SERVICE",
+      "caption": "縦長面でも週の流れを一読できる",
+      "type": "roadmap"
+    },
+    {
+      "file": "service-loop-landscape-1200x628.jpg",
+      "width": 1200,
+      "height": 628,
+      "category": "SERVICE",
+      "caption": "PROJECT LOOPをサービスの中心として伝える",
+      "type": "loop"
+    },
+    {
+      "file": "service-loop-square-1200x1200.jpg",
+      "width": 1200,
+      "height": 1200,
+      "category": "SERVICE",
+      "caption": "仮説・試行・評価・判断の循環を大きく見せる",
+      "type": "loop"
+    },
+    {
+      "file": "service-interest-landscape-1200x628.jpg",
+      "width": 1200,
+      "height": 628,
+      "category": "SERVICE",
+      "caption": "興味が問いとプロジェクトへ変わる過程",
+      "type": "interest"
+    },
+    {
+      "file": "example-ai-quiz-landscape-1200x628.jpg",
+      "width": 1200,
+      "height": 628,
+      "category": "PROJECT EXAMPLES",
+      "caption": "AI英語問題を評価し、条件を変えて試し直すテーマ例",
+      "type": "exampleQuiz"
+    },
+    {
+      "file": "example-game-square-1200x1200.jpg",
+      "width": 1200,
+      "height": 1200,
+      "category": "PROJECT EXAMPLES",
+      "caption": "小さなゲームを人に試し、改善するテーマ例",
+      "type": "exampleGame"
+    },
+    {
+      "file": "mentor-landscape-1200x628.jpg",
+      "width": 1200,
+      "height": 628,
+      "category": "MENTOR",
+      "caption": "本人実写と経歴を、8週間の伴走へ接続",
+      "type": "mentor"
+    },
+    {
+      "file": "mentor-square-1200x1200.jpg",
+      "width": 1200,
+      "height": 1200,
+      "category": "MENTOR",
+      "caption": "講師の信頼とPROJECT LOOPを同時に示す",
+      "type": "mentor"
+    },
+    {
+      "file": "brand-portrait-960x1200.jpg",
+      "width": 960,
+      "height": 1200,
+      "category": "BRAND",
+      "caption": "人物に頼らず、固有の問いと4ステップでブランドを伝える",
+      "type": "brand"
+    }
+  ],
+  "notes": [
+    "Mentor assets use only the existing real photograph of Yuto Nishimura.",
+    "No generated or stock people are used.",
+    "All other assets visualize the service process, project examples, or brand system."
+  ]
+}

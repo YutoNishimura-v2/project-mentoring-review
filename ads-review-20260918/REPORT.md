@@ -26,7 +26,7 @@ Cloudflare Pagesデプロイ：`https://5c20609a.project-mentoring.pages.dev`
 | `public/assets/hero-student.webp` | HeroをWebP化し、LCP用preload・`fetchpriority=high`を適用。 |
 | `public/assets/og-project-mentoring.jpg` | 1200×630の共通OG画像を作成。 |
 | `marketing/google-ads-assets.json` | 現行仕様のP-MAX用見出し・説明文・サイトリンク・search themeを定義。 |
-| `marketing/assets/pmax/` | 既存画像に加え、講師本人を含まないplain photoを横長・正方形・縦長で作成。余白を詰めたロゴ候補も追加。 |
+| `marketing/assets/pmax-v3/` | SERVICE / PROJECT EXAMPLES 7点、MENTOR 2点、BRAND 1点の広告画像候補を作成。AI生成人物は0点。MENTORのみ講師本人の既存実写を使用。 |
 | `marketing/google-ads-pmax.md` | P-MAX登録内容と停止維持条件を文書化。 |
 | `marketing/google-ads-search-draft.md` | 完全一致・フレーズ一致中心の未配信Search案を作成。 |
 | `browser-regression.cjs` / `seo-check.cjs` | レスポンシブ、フォーム、計測、SEOを自動検証。 |
@@ -66,10 +66,11 @@ Cloudflare Pagesデプロイ：`https://5c20609a.project-mentoring.pages.dev`
 - Headlines：15件
 - Long headlines：5件
 - Descriptions：5件
-- Images：管理画面の既存入力は維持。追加候補のplain photoはレビュー用に作成し、未登録
-- Logos：管理画面の既存入力は維持。余白を詰めた2候補はレビュー用に作成し、未登録
+- Images：管理画面の既存入力は維持。サービス体験を主役にした新候補10点はレビュー用に作成し、未登録
+- Creative mix：SERVICE / PROJECT EXAMPLES 70%、MENTOR 20%、BRAND 10%、AI生成人物0%
+- Mentor：西邑勇人本人の実写を使用した2点のみ。生成人物・stock人物・架空の生徒写真は候補から除外
 - Sitelinks：6件を入力済み
-- 動画：18秒previewを16:9・1:1・9:16で作成。未登録
+- 動画：人物を使わず8週間の体験を示す18秒previewを16:9・1:1・9:16で作成。未登録
 
 ### Headlines
 
@@ -164,7 +165,7 @@ analytics consentが`denied`でもフォーム送信と成功表示は可能だ�
 
 ## F. 残タスク
 
-1. Google広告の停止中P-MAXは最終保存していない。追加plain photo、tight logo、動画previewをレビューし、採用素材だけを登録する。保存しても配信再開・予算変更・支出開始はしない。
+1. Google広告の停止中P-MAXは最終保存していない。カテゴリ別画像10点と人物なし動画previewをレビューし、採用素材だけを登録する。保存しても配信再開・予算変更・支出開始はしない。
 2. 保存後、管理画面で停止状態、日予算500円、`generate_lead`主要、旧2件サブを再確認する。
 3. Search Consoleは既存ドメインプロパティの所有権確認済み。Google側の反映後にsitemap処理結果と主要4URLのインデックス状況を再確認する。
 4. P-MAX動画は3比率のpreviewのみ。Google広告・YouTubeへの登録はレビュー後に行う。
