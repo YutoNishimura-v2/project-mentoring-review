@@ -26,7 +26,7 @@ Cloudflare Pagesデプロイ：`https://5c20609a.project-mentoring.pages.dev`
 | `public/assets/hero-student.webp` | HeroをWebP化し、LCP用preload・`fetchpriority=high`を適用。 |
 | `public/assets/og-project-mentoring.jpg` | 1200×630の共通OG画像を作成。 |
 | `marketing/google-ads-assets.json` | 現行仕様のP-MAX用見出し・説明文・サイトリンク・search themeを定義。 |
-| `marketing/assets/pmax-v3/` | SERVICE / PROJECT EXAMPLES 7点、MENTOR 2点、BRAND 1点の広告画像候補を作成。AI生成人物は0点。MENTORのみ講師本人の既存実写を使用。 |
+| `marketing/assets/pmax-v3/` | SERVICE / PROCESS 3点、問い中心のPROJECT EXAMPLES 4点、MENTOR 2点、BRAND 1点を作成。AI生成人物は0点。MENTORのみ講師本人の既存実写を使用。 |
 | `marketing/google-ads-pmax.md` | P-MAX登録内容と停止維持条件を文書化。 |
 | `marketing/google-ads-search-draft.md` | 完全一致・フレーズ一致中心の未配信Search案を作成。 |
 | `browser-regression.cjs` / `seo-check.cjs` | レスポンシブ、フォーム、計測、SEOを自動検証。 |
@@ -67,10 +67,10 @@ Cloudflare Pagesデプロイ：`https://5c20609a.project-mentoring.pages.dev`
 - Long headlines：5件
 - Descriptions：5件
 - Images：管理画面の既存入力は維持。サービス体験を主役にした新候補10点はレビュー用に作成し、未登録
-- Creative mix：SERVICE / PROJECT EXAMPLES 70%、MENTOR 20%、BRAND 10%、AI生成人物0%
+- Creative mix：SERVICE / PROCESS 3点、PROJECT EXAMPLES 4点、MENTOR 2点、BRAND 1点、AI生成人物0%
 - Mentor：西邑勇人本人の実写を使用した2点のみ。生成人物・stock人物・架空の生徒写真は候補から除外
 - Sitelinks：6件を入力済み
-- 動画：人物を使わず8週間の体験を示す18秒previewを16:9・1:1・9:16で作成。未登録
+- 動画：人物を使わず、具体的なPROJECT EXAMPLEを中盤に含む18秒previewを16:9・1:1・9:16で作成。未登録
 
 ### Headlines
 

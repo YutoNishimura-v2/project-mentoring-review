@@ -1,9 +1,10 @@
 {
-  "generatedAt": "2026-09-17T18:11:55.609Z",
+  "generatedAt": "2026-09-17T18:41:14.019Z",
   "creativeMix": {
-    "serviceAndProjectExamples": "70%",
-    "mentor": "20%",
-    "brand": "10%",
+    "serviceProcess": "3 assets",
+    "projectExamples": "4 assets",
+    "mentor": "2 assets",
+    "brand": "1 asset",
     "aiGeneratedPeople": "0%"
   },
   "assets": [
@@ -11,57 +12,57 @@
       "file": "service-roadmap-landscape-1200x628.jpg",
       "width": 1200,
       "height": 628,
-      "category": "SERVICE",
-      "caption": "8週間の全体像を4つの大きな段階で伝える",
+      "category": "SERVICE / PROCESS",
+      "caption": "8週間を4つの大きな段階で伝える",
       "type": "roadmap"
-    },
-    {
-      "file": "service-roadmap-portrait-960x1200.jpg",
-      "width": 960,
-      "height": 1200,
-      "category": "SERVICE",
-      "caption": "縦長面でも週の流れを一読できる",
-      "type": "roadmap"
-    },
-    {
-      "file": "service-loop-landscape-1200x628.jpg",
-      "width": 1200,
-      "height": 628,
-      "category": "SERVICE",
-      "caption": "PROJECT LOOPをサービスの中心として伝える",
-      "type": "loop"
     },
     {
       "file": "service-loop-square-1200x1200.jpg",
       "width": 1200,
       "height": 1200,
-      "category": "SERVICE",
-      "caption": "仮説・試行・評価・判断の循環を大きく見せる",
+      "category": "SERVICE / PROCESS",
+      "caption": "仮説・試行・評価・判断の循環を一つだけ大きく見せる",
       "type": "loop"
     },
     {
-      "file": "service-interest-landscape-1200x628.jpg",
-      "width": 1200,
-      "height": 628,
-      "category": "SERVICE",
-      "caption": "興味が問いとプロジェクトへ変わる過程",
-      "type": "interest"
+      "file": "offer-portrait-960x1200.jpg",
+      "width": 960,
+      "height": 1200,
+      "category": "SERVICE / PROCESS",
+      "caption": "8週間・1対1・提供内容・価格を一枚だけで明示する",
+      "type": "offer"
     },
     {
       "file": "example-ai-quiz-landscape-1200x628.jpg",
       "width": 1200,
       "height": 628,
       "category": "PROJECT EXAMPLES",
-      "caption": "AI英語問題を評価し、条件を変えて試し直すテーマ例",
+      "caption": "AIが作った問題を評価し、条件を変えて試す問い",
       "type": "exampleQuiz"
+    },
+    {
+      "file": "example-speech-portrait-960x1200.jpg",
+      "width": 960,
+      "height": 1200,
+      "category": "PROJECT EXAMPLES",
+      "caption": "音声認識が間違える条件を比べる問い",
+      "type": "exampleSpeech"
     },
     {
       "file": "example-game-square-1200x1200.jpg",
       "width": 1200,
       "height": 1200,
       "category": "PROJECT EXAMPLES",
-      "caption": "小さなゲームを人に試し、改善するテーマ例",
+      "caption": "説明なしで遊べるかを人に試す問い",
       "type": "exampleGame"
+    },
+    {
+      "file": "example-sports-landscape-1200x628.jpg",
+      "width": 1200,
+      "height": 628,
+      "category": "PROJECT EXAMPLES",
+      "caption": "スポーツデータと勝敗の関係を確かめる問い",
+      "type": "exampleSports"
     },
     {
       "file": "mentor-landscape-1200x628.jpg",

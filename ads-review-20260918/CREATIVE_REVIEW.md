@@ -10,8 +10,8 @@
 
 | カテゴリ | 点数 | 構成比 | 伝えること |
 |---|---:|---:|---|
-| SERVICE | 5 | 50% | 8週間の流れ、PROJECT LOOP、興味からテーマへの変換 |
-| PROJECT EXAMPLES | 2 | 20% | 実際に何を試し、何を評価し、どう改善するか |
+| SERVICE / PROCESS | 3 | 30% | 8週間の流れ、PROJECT LOOP、提供内容と価格 |
+| PROJECT EXAMPLES | 4 | 40% | 具体的な問いから、何を試し、何を確かめ、どう改善するか |
 | MENTOR | 2 | 20% | 本人実写と経歴による信頼、1対1の伴走 |
 | BRAND | 1 | 10% | 「AI時代に、どう学ぶか。」と固有の4ステップ |
 
@@ -21,18 +21,18 @@ AI生成人物は0点。生成された生徒・講師・教育風景、stock人
 
 | カテゴリ | ファイル | 伝えること |
 |---|---|---|
-| SERVICE | `service-roadmap-landscape-1200x628.jpg` | 8週間を4つの大きな段階で理解できる |
-| SERVICE | `service-roadmap-portrait-960x1200.jpg` | 縦長面でも同じ流れを一読できる |
-| SERVICE | `service-loop-landscape-1200x628.jpg` | 仮説→試行→評価→判断を学びの中心として示す |
-| SERVICE | `service-loop-square-1200x1200.jpg` | PROJECT LOOPを小さな広告面でも認識できる |
-| SERVICE | `service-interest-landscape-1200x628.jpg` | ゲームへの興味が問いとプロジェクトへ変わる |
-| PROJECT EXAMPLES | `example-ai-quiz-landscape-1200x628.jpg` | AI英語問題を評価し、条件を変えて試し直すテーマ例 |
-| PROJECT EXAMPLES | `example-game-square-1200x1200.jpg` | 小さなゲームを人に試し、改善するテーマ例 |
+| SERVICE / PROCESS | `service-roadmap-landscape-1200x628.jpg` | 8週間を4つの大きな段階で理解できる |
+| SERVICE / PROCESS | `service-loop-square-1200x1200.jpg` | 仮説→試行→評価→判断を学びの中心として示す |
+| SERVICE / PROCESS | `offer-portrait-960x1200.jpg` | 8週間・1対1・提供内容・20万円をこの1枚だけで明示する |
+| PROJECT EXAMPLES | `example-ai-quiz-landscape-1200x628.jpg` | AIが作った問題が良い問題かを確かめる問い |
+| PROJECT EXAMPLES | `example-speech-portrait-960x1200.jpg` | 音声認識が間違える条件を比べる問い |
+| PROJECT EXAMPLES | `example-game-square-1200x1200.jpg` | 作ったゲームが説明なしで遊べるかを試す問い |
+| PROJECT EXAMPLES | `example-sports-landscape-1200x628.jpg` | 勝敗と関係する数字をデータで確かめる問い |
 | MENTOR | `mentor-landscape-1200x628.jpg` | 本人実写と経歴を8週間の伴走へ接続する |
 | MENTOR | `mentor-square-1200x1200.jpg` | 講師の信頼とPROJECT LOOPを同時に示す |
 | BRAND | `brand-portrait-960x1200.jpg` | 人物に頼らず、固有の問いと4ステップを伝える |
 
-PROJECT EXAMPLESは受講生実績ではなくテーマ例であることを画像内に明記している。
+PROJECT EXAMPLESは受講生実績ではなくテーマ例であることを画像内に明記している。価格を大きく表示するのはOffer 1点だけで、画像内CTAもこの1点だけに限定した。contact sheetでは全候補をGoogle広告に近い最大320px幅で表示し、細部を読まなくても主題が残ることを確認した。
 
 ## 動画preview
 
@@ -40,7 +40,7 @@ PROJECT EXAMPLESは受講生実績ではなくテーマ例であることを画�
 
 1. 0–3秒：AI時代に、どう学ぶか。
 2. 3–7秒：興味から、テーマを決める。
-3. 7–11秒：小さく試す。結果を見る。
+3. 7–11秒：AIが作った問題。本当に「良い問題」？／試す→確かめる→改善する
 4. 11–14秒：評価して、次を決める。
 5. 14–18秒：8週間 / ONLINE 1:1 / 20万円（税込） / 保護者向け20分無料相談
 
@@ -52,4 +52,3 @@ PROJECT EXAMPLESは受講生実績ではなくテーマ例であることを画�
 - P-MAXの最終保存：未実施
 - Search campaignの作成・配信：未実施
 - 本番サイトの変更：なし
-
