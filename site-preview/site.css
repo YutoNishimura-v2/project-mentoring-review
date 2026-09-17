@@ -126,6 +126,8 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .price-value span { font-size: 14px; font-weight: 650; }
 .price-panel ul { margin: 0; padding: 9px 0 0; list-style: none; }
 .price-panel li { padding: 18px 0; border-bottom: 1px solid #dfd5d2; font-size: 14px; }
+.price-faq-link { display: flex; justify-content: flex-end; margin-top: 18px; font-size: 13px; }
+.price-faq-link .text-link { font-weight: 600; }
 
 .final-cta, .projects-close { padding: 68px 0; background: var(--accent); color: #fff; }
 .final-cta-inner, .projects-close > .container { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
