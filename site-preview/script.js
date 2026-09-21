@@ -24,10 +24,49 @@
   const reviewHeading = document.querySelector('#review-title');
   const reviewFields = document.querySelector('#review-fields');
   const reviewNotice = document.querySelector('#review-notice');
+  const bookingNextStep = document.querySelector('#booking-next-step');
   const returnButton = document.querySelector('#review-return');
   const fallbacks = [...document.querySelectorAll('[data-send-fallback]')];
+  const submitButton = form?.querySelector('[type="submit"]');
   let pending = null;
   let inFlight = false;
+
+  function closeDialog(dialog) {
+    if (!dialog) return;
+    try {
+      if (typeof dialog.close === 'function' && dialog.open) dialog.close();
+      else dialog.removeAttribute('open');
+    } catch {
+      dialog.removeAttribute('open');
+    }
+    dialog.classList.remove('dialog-fallback');
+    dialog.removeAttribute('aria-modal');
+    if (!document.querySelector('.site-dialog.dialog-fallback[open]')) document.body.classList.remove('has-dialog-fallback');
+  }
+
+  function openDialog(dialog, focusTarget) {
+    if (!dialog) return false;
+    if (dialog.open || dialog.hasAttribute('open')) closeDialog(dialog);
+    try {
+      if (typeof dialog.showModal !== 'function') throw new Error('Dialog API unavailable');
+      dialog.showModal();
+    } catch {
+      dialog.setAttribute('open', '');
+      dialog.classList.add('dialog-fallback');
+      dialog.setAttribute('aria-modal', 'true');
+      document.body.classList.add('has-dialog-fallback');
+    }
+    try { focusTarget?.focus({ preventScroll: true }); } catch { /* Focus is an enhancement. */ }
+    return dialog.open || dialog.hasAttribute('open');
+  }
+
+  function createRequestId() {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+    const random = window.crypto && typeof window.crypto.getRandomValues === 'function'
+      ? window.crypto.getRandomValues(new Uint32Array(2)).join('-')
+      : Math.random().toString(36).slice(2);
+    return `pm-${Date.now()}-${random}`;
+  }
 
   function closeMenu() {
     if (!menu || !menuButton) return;
@@ -44,28 +83,37 @@
     });
     menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
     window.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-    window.matchMedia('(min-width:1001px)').addEventListener('change', e => { if (e.matches) closeMenu(); });
+    try {
+      const desktopQuery = window.matchMedia('(min-width:1001px)');
+      const onDesktop = e => { if (e.matches) closeMenu(); };
+      if (typeof desktopQuery.addEventListener === 'function') desktopQuery.addEventListener('change', onDesktop);
+      else if (typeof desktopQuery.addListener === 'function') desktopQuery.addListener(onDesktop);
+    } catch { /* Navigation compatibility must not block the form. */ }
   }
 
   const terms = document.querySelector('#terms-dialog');
-  const openTerms = () => { if (terms && !terms.open) terms.showModal(); };
+  const openTerms = () => { if (terms && !terms.open) openDialog(terms, terms.querySelector('h2')); };
   const openLinkedTerms = () => { if (window.location.hash === '#terms') openTerms(); };
-  const openLinkedPrivacy = () => { if (privacy && window.location.hash === '#privacy' && !privacy.open) privacy.showModal(); };
+  const openLinkedPrivacy = () => { if (privacy && window.location.hash === '#privacy' && !privacy.open) openDialog(privacy, privacy.querySelector('h2')); };
   document.querySelectorAll('[data-terms]').forEach(link => link.addEventListener('click', e => { e.preventDefault(); openTerms(); }));
   window.addEventListener('hashchange', openLinkedTerms);
   window.addEventListener('hashchange', openLinkedPrivacy);
   openLinkedTerms();
   openLinkedPrivacy();
-  document.querySelectorAll('[data-privacy]').forEach(button => button.addEventListener('click', () => privacy?.showModal()));
+  document.querySelectorAll('[data-privacy]').forEach(button => button.addEventListener('click', () => openDialog(privacy, privacy?.querySelector('h2'))));
   document.querySelectorAll('dialog').forEach(dialog => {
-    dialog.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => dialog.close()));
+    dialog.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => closeDialog(dialog)));
     dialog.addEventListener('click', e => {
       const rect = dialog.getBoundingClientRect();
-      if (e.target === dialog && (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom)) dialog.close();
+      if (e.target === dialog && (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom)) closeDialog(dialog);
     });
   });
-  if (form && canSend) {
-    document.querySelector('#privacy-storage').textContent = config.processorDisclosure;
+  window.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeDialog(document.querySelector('.site-dialog.dialog-fallback[open]'));
+  });
+  if (typeof config.processorDisclosure === 'string') {
+    const privacyStorage = document.querySelector('#privacy-storage');
+    if (privacyStorage) privacyStorage.textContent = config.processorDisclosure;
   }
 
   if (typeof config.privacyContact === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(config.privacyContact)) {
@@ -108,12 +156,13 @@
       email: form.elements.email.value.trim(),
       interest: form.elements.interest.value.trim(),
       consent: true,
-      requestId: window.crypto.randomUUID(),
+      requestId: createRequestId(),
       honey: form.elements.website.value,
     };
     review.classList.remove('is-complete');
     reviewHeading.textContent = '入力内容の確認';
     reviewFields.hidden = false;
+    if (bookingNextStep) bookingNextStep.hidden = true;
     sendButton.hidden = false;
     returnButton.className = 'text-link';
     returnButton.textContent = '入力に戻る';
@@ -126,21 +175,39 @@
       dt.textContent = label; dd.textContent = value; fields.append(dt, dd);
     });
     document.querySelector('#send-status').textContent = '';
-    document.querySelector('#review-notice').textContent = canSend ? '保護者向け無料相談（20分・オンライン）を申し込みます。有料指導の内容・料金のご案内と、適している場合の受講提案を含みます。有料受講の申込みではありません。日程はメールで調整します。' : '現在はオンライン受付の準備中です。入力内容は送信されず、お申し込みは完了しません。';
+    document.querySelector('#review-notice').textContent = canSend ? '保護者向け無料相談（20分・オンライン）を申し込みます。有料指導の内容・料金のご案内と、適している場合の受講提案を含みます。有料受講の申込みではありません。送信後、そのまま日時を選べます。後日メールでの調整も可能です。' : '現在はオンライン受付の準備中です。入力内容は送信されず、お申し込みは完了しません。';
     sendButton.disabled = !canSend;
     sendButton.textContent = canSend ? 'この内容で申し込む' : '受付準備中';
-    review.showModal();
-    review.scrollTop = 0;
-  });
-
-  sendButton.addEventListener('click', async () => {
-    if (reviewOnly) {
-      document.querySelector('#send-status').textContent = 'レビュー版のため、入力内容は送信されません。';
-      sendButton.textContent = 'レビュー版では送信しません';
-      sendButton.disabled = true;
+    if (!openDialog(review, reviewHeading)) {
+      document.querySelector('#form-status').textContent = '確認画面を開けませんでした。ページを再読み込みしてお試しください。';
       return;
     }
+    review.scrollTop = 0;
+  });
+  if (submitButton) submitButton.disabled = false;
+
+  sendButton.addEventListener('click', async () => {
     if (!canSend || !pending || inFlight) return;
+    if (reviewOnly) {
+      review.classList.add('is-complete');
+      reviewHeading.textContent = '無料相談を受け付けました';
+      reviewFields.hidden = true;
+      const receiptEmail = document.createElement('strong');
+      receiptEmail.className = 'receipt-email';
+      receiptEmail.textContent = pending.email;
+      reviewNotice.replaceChildren(document.createTextNode('レビュー版です。実際の送信はしていません。このまま日時選択後の画面を確認できます。ご連絡先：'), receiptEmail);
+      if (bookingNextStep) bookingNextStep.hidden = false;
+      document.querySelector('#send-status').textContent = '';
+      sendButton.hidden = true;
+      returnButton.className = 'button';
+      returnButton.textContent = '閉じる';
+      document.querySelector('#form-status').textContent = 'レビュー版のため、入力内容は外部へ送信していません。';
+      pending = null;
+      form.reset();
+      review.scrollTop = 0;
+      if (review.open) reviewHeading.focus();
+      return;
+    }
     inFlight = true; sendButton.disabled = true; sendButton.textContent = '送信しています…';
     const formControls = [...form.elements];
     formControls.forEach(control => { control.disabled = true; });
@@ -161,6 +228,20 @@
       _url: config.formUrl,
       _honey: pending.honey,
     };
+    try {
+      const attribution = window.MentoringAnalytics?.formAttribution?.();
+      if (attribution) {
+        const formFields = {
+          landing_path: '流入_初回ランディング',
+          utm_source: '流入_utm_source',
+          utm_medium: '流入_utm_medium',
+          utm_campaign: '流入_utm_campaign',
+          utm_content: '流入_utm_content',
+          utm_term: '流入_utm_term',
+        };
+        for (const [key, label] of Object.entries(formFields)) if (attribution[key]) payload[label] = attribution[key];
+      }
+    } catch { /* Attribution is optional and must never block the form. */ }
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), 15000);
     try {
@@ -174,13 +255,14 @@
       const receiptEmail = document.createElement('strong');
       receiptEmail.className = 'receipt-email';
       receiptEmail.textContent = pending.email;
-      reviewNotice.replaceChildren(document.createTextNode('日程調整のご連絡は、次のメールアドレスへお送りします。'), receiptEmail);
+      reviewNotice.replaceChildren(document.createTextNode('受付は完了しています。このまま日時を選ぶか、後日メールで調整できます。ご連絡先：'), receiptEmail);
+      if (bookingNextStep) bookingNextStep.hidden = false;
       status.textContent = '';
       sendButton.hidden = true;
       sendButton.textContent = '受付完了';
       returnButton.className = 'button';
       returnButton.textContent = '閉じる';
-      document.querySelector('#form-status').textContent = '無料相談を受け付けました。ご入力のメールアドレスへ、日程調整のご連絡をいたします。';
+      document.querySelector('#form-status').textContent = '無料相談を受け付けました。このまま日時を選択できます。後日メールでの調整も可能です。';
       try { window.MentoringAnalytics?.leadAccepted(pending.requestId); } catch { /* Tracking cannot turn a received request into an error. */ }
       pending = null; form.reset();
       review.scrollTop = 0;
@@ -207,5 +289,4 @@
       button.querySelector('span').textContent = expanded ? '−' : '＋';
     });
   });
-  form.querySelector('[type=submit]').disabled = false;
 })();
