@@ -1,0 +1,24 @@
+{
+  "result": "PASS",
+  "pages": [
+    {
+      "route": "/",
+      "status": 200,
+      "og_image": "https://review-lp-positioning-202609.project-mentoring.pages.dev/assets/og-project-mentoring.jpg",
+      "twitter_image": "https://review-lp-positioning-202609.project-mentoring.pages.dev/assets/og-project-mentoring.jpg",
+      "alt": "PROJECT MENTORING — 自分のテーマを、技術で形に。中高生向け・8週間・オンライン1対1"
+    },
+    {
+      "route": "/consultation",
+      "status": 200,
+      "og_image": "https://review-lp-positioning-202609.project-mentoring.pages.dev/assets/og-project-mentoring.jpg",
+      "twitter_image": "https://review-lp-positioning-202609.project-mentoring.pages.dev/assets/og-project-mentoring.jpg",
+      "alt": "PROJECT MENTORING — 自分のテーマを、技術で形に。中高生向け・8週間・オンライン1対1"
+    }
+  ],
+  "image_bytes": 100337,
+  "image_sha256": "0a39812aba64975bacb8019168b0ade41fae5e7fad8285202a968445c6f96f8e",
+  "remote_image_matches_review_artifact": true,
+  "size": "1200x630 (local JPEG verified)",
+  "production_deployed": false
+}

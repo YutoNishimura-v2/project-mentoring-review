@@ -1,5 +1,18 @@
 # Remote LP review — 2026-09-25
 
+## OG画像更新（最新）
+
+- [新OG画像・1200×630](https://review-lp-positioning-202609.project-mentoring.pages.dev/assets/og-project-mentoring.jpg)
+- 画像内コピー：「自分のテーマを、技術で形に。」「中高生向け・8週間・オンライン1対1」。既存写真・トリミング・フォント・暗いオーバーレイ・白文字・赤いアクセントを維持。見出しは読点で2行に分けた。
+- 既存の編集可能な画像生成ソース `build-final-assets.py` を更新。`--og-only` でOGだけを再生成でき、広告画像・Hero写真には変更なし。
+- Home/Consultationのog:image:altを新コピーへ更新。同じ共通画像を参照するFAQ/Projectsもaltのみ同期。Twitter CardはOGと同じ画像。reviewのOG/Twitter画像URLはreview originの絶対URLへ統一。
+- LP本文・レイアウト・CSS・JSは変更なし。production sourceのHTML差分がalt置換のみであることを確認。
+- 配置payload commit：`03560bbadc04cb0f8b1b8c63f4f34e38354fd362`。sourceのローカルreview commit：`d5a6a3c`。固定deployment： https://3804d12e.project-mentoring.pages.dev/ 。同じbranch aliasも更新済み。
+- [HTTP検証記録](review-artifacts/20260925-og/checks.json)：Home/ConsultationのOG/Twitter画像URL一致・alt・1200×630指定・noindex/nofollowを確認。remote JPEGは完成artifactとbyte一致（100,337 bytes）。ローカルJPEG実寸1200×630と文字の収まりも確認。SEO・production-audit PASS。
+- 本番deployment `6ee5f50c-2068-4f26-9d7f-85f86ce632b1`、main、domains、設定hashは不変。production merge/deploy未実施。ユーザー最終確認待ち。
+
+![新OG画像](remote-preview/assets/og-project-mentoring.jpg)
+
 ## 追加レビュー後の小修正（最新）
 
 - [更新するHome preview URL](https://review-lp-positioning-202609.project-mentoring.pages.dev/)
