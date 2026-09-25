@@ -1,5 +1,20 @@
 # Remote LP review — 2026-09-25
 
+## 追加レビュー後の小修正（最新）
+
+- [更新するHome preview URL](https://review-lp-positioning-202609.project-mentoring.pages.dev/)
+- [更新するConsultation preview URL](https://review-lp-positioning-202609.project-mentoring.pages.dev/consultation)
+- 今回の固定deployment URL： https://e6e57885.project-mentoring.pages.dev/
+- コピー変更・配置payload commit：`30171ee828cfc0231eb92458cb0f76aaf559bf38`。本番sourceのローカルreview commit：`7427eb3`。
+- Hero supportを「現役AI Research Engineerが、テーマ設定から制作・実験・評価まで伴走。進路やテーマがまだ固まっていなくても、本人の興味から相談できます。」へ変更。
+- Home・consultationのmeta/OG/Twitter description、FOR YOU進路カード、consultation本文の列挙を「海外大学や総合型選抜」へ統一。4 HTMLファイルの差分が指定の文字列置換だけであることを確認。デザイン・構造・商品条件・境界は変更なし。
+- 同じbranch alias URLでHome/consultationの1280px・390px・320pxを再確認。横スクロール・Hero CTA欠けなし。remote DOMで新コピー・descriptionと旧列挙の不在を確認。console warn/errorなし。
+- [最新HTTP検査](review-artifacts/20260925-copy-followup/http-checks.json)・[ブラウザー検査](review-artifacts/20260925-copy-followup/browser-checks.json)はPASS。画像は同じディレクトリにHome/consultation × desktop/mobile/320pxの6枚を保存。sourceのJS構文・SEO・production-audit・同意/attribution等30項目もPASS。
+- noindex/nofollow、フォーム送信・解析無効の仕組みは変更なし。production deployment `6ee5f50c-2068-4f26-9d7f-85f86ce632b1`、main、domains、設定hashは前回確認値と一致。production merge/deployなし。
+- Notionの既存ToDoへ記録し、ユーザーの最終確認待ち。以下は前回previewの履歴。旧固定deployment URLは更新されないため、今回以降は上記branch aliasを使用する。
+
+## 前回previewの記録
+
 状態：remote previewの実画面検証完了。ユーザー／ChatGPTレビュー待ち。本番反映は未承認・未実施。
 
 - [Home（今回のdeployment固定URL）](https://3e171ee3.project-mentoring.pages.dev/)
