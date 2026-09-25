@@ -22,6 +22,9 @@ for name in ['index.html', 'consultation.html', 'projects.html', 'faq.html', '40
     html = re.sub(r'<link rel="canonical" href="[^"]+">', '', html)
     html = html.replace('https://project-mentoring.com/assets/', '/assets/')
     html = html.replace('https://project-mentoring.com/', ALIAS)
+    # Social image metadata must use an absolute URL on the review origin.
+    html = html.replace('property="og:image" content="/assets/', 'property="og:image" content="' + ALIAS + 'assets/')
+    html = html.replace('name="twitter:image" content="/assets/', 'name="twitter:image" content="' + ALIAS + 'assets/')
     html = html.replace('href="https://calendar.app.google/zDMqNh2eyVPjtzSW6"', 'href="#review-environment"')
     html = html.replace('Google予約ページで日時を選ぶ', 'レビュー版では予約に進みません')
     html = html.replace('target="_blank" rel="noopener noreferrer" data-booking-position', 'data-booking-position')
