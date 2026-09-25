@@ -9,7 +9,7 @@ SOURCE = ROOT / 'site-preview'
 OUTPUT = ROOT / 'remote-preview'
 OUTPUT.mkdir(exist_ok=True)
 BASE = '/project-mentoring-review/site-preview'
-ALIAS = 'https://review-lp-positioning-20260925.project-mentoring.pages.dev/'
+ALIAS = 'https://review-lp-positioning-202609.project-mentoring.pages.dev/'
 BANNER = '<aside id="review-environment" class="review-banner" aria-label="レビュー環境">REVIEW PREVIEW — 確認用 / 申込送信・アクセス解析は無効です</aside>'
 
 for name in ['index.html', 'consultation.html', 'projects.html', 'faq.html', '404.html']:

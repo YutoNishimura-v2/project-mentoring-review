@@ -1,0 +1,9 @@
+.wrangler/
+.npm-cache/
+node_modules/
+.env
+.env.*
+*.pem
+*.key
+credentials*.json
+secrets*.json
