@@ -46,7 +46,9 @@ Hero補足のみ「海外大学・留学・国内総合型選抜も視野に、�
 
 本番不変をCloudflare APIの前後比較で確認：canonical deployment `6ee5f50c-2068-4f26-9d7f-85f86ce632b1`、production branch `main`、domains、deployment configのSHA-256が一致。GitHub production mainも `97e6626eca948a14c66d48fafb91264c34979692` のまま。新deploymentはAPI上もenvironment=`preview`、branch=`review-lp-positioning-20260925`。
 
-レビューを妨げる既知の不具合はなし。相談増加・成約効果は未検証。フォーム送信・日時予約・本番計測の稼働確認はこのreview環境の目的外で、意図的に無効。明示承認までproduction merge/deployは行わない。
+画面表示上の既知の不具合はなし。ただし、このセッションのWeb取得ツールでは固定URL・branch aliasとも取得できなかった。Codexブラウザーでのremote実表示とHTTP GETは成功しているが、ChatGPT側のURL取得ツールで必ず読めるとは保証しない。取得できない場合は、このGitHub上のスクリーンショットを併用する。Cloudflare/DNSの設定変更は行っていない。
+
+相談増加・成約効果は未検証。フォーム送信・日時予約・本番計測の稼働確認はこのreview環境の目的外で、意図的に無効。明示承認までproduction merge/deployは行わない。
 
 ## Remote screenshots
 
