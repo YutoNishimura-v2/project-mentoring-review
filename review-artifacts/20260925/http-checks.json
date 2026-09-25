@@ -1,0 +1,47 @@
+{
+  "base": "https://3e171ee3.project-mentoring.pages.dev/",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "robots": "noindex,nofollow",
+      "x_robots_tag": "noindex, nofollow",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'self'"
+    },
+    {
+      "path": "/consultation",
+      "status": 200,
+      "robots": "noindex,nofollow",
+      "x_robots_tag": "noindex, nofollow",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'self'"
+    },
+    {
+      "path": "/projects",
+      "status": 200,
+      "robots": "noindex,nofollow",
+      "x_robots_tag": "noindex, nofollow",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'self'"
+    },
+    {
+      "path": "/faq",
+      "status": 200,
+      "robots": "noindex,nofollow",
+      "x_robots_tag": "noindex, nofollow",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'self'"
+    },
+    {
+      "path": "/404",
+      "status": 200,
+      "robots": "noindex,nofollow",
+      "x_robots_tag": "noindex, nofollow",
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; object-src 'none'; base-uri 'self'"
+    }
+  ],
+  "same_origin_resources_checked": 21,
+  "broken_internal_links": 0,
+  "remote_scripts_match_audited_payload": true,
+  "review_form_endpoint": "empty",
+  "analytics": "disabled; no measurement ID; inert script",
+  "method": "GET only; no form submission or external destination requested",
+  "result": "PASS"
+}

@@ -1,6 +1,6 @@
 # LP訴求微修正レビュー — 2026-09-25
 
-状態：ローカル実装・検証完了／ユーザーレビュー待ち。公開deploy・production merge・remote pushは未実施。
+最新状態：Hero補足を「海外大学や総合型選抜も視野に、自分の興味を深めたい中高生へ。」に短縮し、Cloudflareのremote branch previewを作成・検証済み。本番は未反映。最新URL・検証記録・スクリーンショットは [REMOTE_REVIEW_20260925.md](REMOTE_REVIEW_20260925.md) を参照。以下は初回ローカルレビューの記録（Hero比較案を含む）。
 
 ## レビュー対象
 
